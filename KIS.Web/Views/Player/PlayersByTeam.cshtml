@@ -1,0 +1,56 @@
+﻿@model IEnumerable<KIS.Core.Domain.Models.PlayerModel>
+
+@{
+    ViewData["Title"] = "Players";
+}
+
+<h1>Players</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("First name")
+            </th>
+            <th>
+                @Html.DisplayName("Description")
+            </th>
+            <th>
+                @Html.DisplayName("Date of birth")
+            </th>
+            <th>
+                @Html.DisplayName("Position Code")
+            </th>
+            <th>
+                @Html.DisplayName("Transfer cost")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PositionCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TransferCost)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+
+@Html.ActionLink("Back", "TotalCost", "Team")

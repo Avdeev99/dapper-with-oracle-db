@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="DapperExtensions" Version="1.6.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.9" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.90" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\KIS.Core\KIS.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\League\" />
+    <Folder Include="Resources\Team\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Team\GetTeamsWithTotalCost.sql" />
+    <None Remove="Resources\Team\GetTeamYearProfit.sql" />
+    <None Remove="Resources\Player\GetPlayersByTeamId.sql" />
+    <None Remove="Resources\League\GetLeagues.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Team\GetTeamsWithTotalCost.sql" />
+    <EmbeddedResource Include="Resources\Team\GetTeamYearProfit.sql" />
+    <EmbeddedResource Include="Resources\Player\GetPlayersByTeamId.sql" />
+    <EmbeddedResource Include="Resources\League\GetLeagues.sql" />
+  </ItemGroup>
+
+</Project>

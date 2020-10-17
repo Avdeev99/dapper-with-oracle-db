@@ -1,0 +1,21 @@
+﻿@model KIS.Core.Domain.Models.TeamModel
+
+@{
+    ViewData["Title"] = "TeamLastYearProfit";
+}
+
+<h1>Team Last Year Profit</h1>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Last year profit: ")
+        </dt>
+        <dd class = "col-sm-10">
+            @ViewBag.TeamProfit
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="TotalCost">Back to List</a>
+</div>

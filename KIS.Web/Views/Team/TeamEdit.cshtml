@@ -1,0 +1,50 @@
+﻿@model KIS.Web.Contracts.Models.TeamEditViewModel
+
+@{
+    ViewData["Title"] = "TeamEdit";
+}
+
+<h1>Team Creation</h1>
+
+<h4>Team Model</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Team.LeagueId" class="control-label">League</label>
+
+                @Html.DropDownListFor(model => model.Team.LeagueId,
+                    new SelectList(Model.Leagues, "LeagueId", "Name"), "Select league",
+                    new {@class = "control-label", required = "required" })
+
+                <span asp-validation-for="Team.LeagueId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Team.Name" class="control-label">Name</label>
+                <input asp-for="Team.Name" class="form-control" required="required" />
+                <span asp-validation-for="Team.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Team.Description" class="control-label">Description</label>
+                <input asp-for="Team.Description" class="form-control" required="required" />
+                <span asp-validation-for="Team.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Team.FoundationDate" class="control-label">Foundation date</label>
+                <input type="date" asp-for="Team.FoundationDate" class="form-control" required="required" />
+                <span asp-validation-for="Team.FoundationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Back", "TotalCost")
+</div>
+
